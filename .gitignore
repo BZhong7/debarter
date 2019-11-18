@@ -56,4 +56,4 @@ buck-out/
 *.jsbundle
 
 # dotenv
-*.env
+.env

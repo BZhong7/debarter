@@ -17,10 +17,12 @@
  * phrase from a file you've .gitignored so it doesn't accidentally become public.
  *
  */
-//require('dotenv').config();
-//const HDWalletProvider = require("@truffle/hdwallet-provider");
-//const mnemonic = 
-//"razor math orient achieve clump reward toy gorilla loud hub oyster boring parrot comic weather";
+require('dotenv').config();
+
+var secretKey = new String(process.env.MEW_KEY);
+
+const HDWalletProvider = require("@truffle/hdwallet-provider");
+const mnemonic = secretKey; 
 
 //var ropstenPrivateKey = new Buffer(process.env["ROPSTEN_PRIVATE_KEY"], "hex");
 //var ropstenWallet = Wallet.fromPrivateKey(ropstenPrivateKey);
@@ -53,13 +55,13 @@ module.exports = {
 
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
-//     ropsten: {
-//       provider: function() {
-//           return new HDWalletProvider(mnemonic, 
-//               "https://ropsten.infura.io/v3/4876cedb80be4b1494f888302a420403")
-//       },
-//         network_id: "3",       // Ropsten's id
-//     },
+     ropsten: {
+       provider: function() {
+           return new HDWalletProvider(mnemonic, 
+               "https://ropsten.infura.io/v3/4876cedb80be4b1494f888302a420403")
+       },
+         network_id: "3",       // Ropsten's id
+     },
 
     // Useful for private networks
     // private: {

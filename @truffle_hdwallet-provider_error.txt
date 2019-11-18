@@ -1,0 +1,1077 @@
+> scrypt@6.0.3 preinstall /home/brandon/debarter/node_modules/scrypt
+> node node-scrypt-preinstall.js
+
+
+> keccak@1.4.0 install /home/brandon/debarter/node_modules/eth-block-tracker/node_modules/keccak
+> npm run rebuild || echo "Keccak bindings compilation fail. Pure JS implementation will be used."
+
+
+> keccak@1.4.0 rebuild /home/brandon/debarter/node_modules/eth-block-tracker/node_modules/keccak
+> node-gyp rebuild
+
+make: Entering directory '/home/brandon/debarter/node_modules/eth-block-tracker/node_modules/keccak/build'
+  CXX(target) Release/obj.target/keccak/src/addon.o
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Initialize(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:37:47: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned int rate = info[0]->IntegerValue();
+                                               ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc:38:51: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned int capacity = info[1]->IntegerValue();
+                                                   ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::AbsorbLastFewBits(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:56:48: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned char bits = info[0]->IntegerValue();
+                                                ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Squeeze(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:64:43: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     size_t length = info[0]->IntegerValue();
+                                           ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Copy(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:75:82: error: no matching function for call to ‘v8::Value::ToObject()’
+     KeccakWrapper* to = Nan::ObjectWrap::Unwrap<KeccakWrapper>(info[0]->ToObject());
+                                                                                  ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2631:44: note: candidate: v8::MaybeLocal<v8::Object> v8::Value::ToObject(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT MaybeLocal<Object> ToObject(
+                                            ^~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2631:44: note:   candidate expects 1 argument, 0 provided
+keccak.target.mk:127: recipe for target 'Release/obj.target/keccak/src/addon.o' failed
+make: *** [Release/obj.target/keccak/src/addon.o] Error 1
+make: Leaving directory '/home/brandon/debarter/node_modules/eth-block-tracker/node_modules/keccak/build'
+gyp ERR! build error 
+gyp ERR! stack Error: `make` failed with exit code: 2
+gyp ERR! stack     at ChildProcess.onExit (/usr/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:194:23)
+gyp ERR! stack     at ChildProcess.emit (events.js:210:5)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:272:12)
+gyp ERR! System Linux 5.0.0-32-generic
+gyp ERR! command "/usr/bin/node" "/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /home/brandon/debarter/node_modules/eth-block-tracker/node_modules/keccak
+gyp ERR! node -v v13.1.0
+gyp ERR! node-gyp -v v5.0.5
+gyp ERR! not ok 
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! keccak@1.4.0 rebuild: `node-gyp rebuild`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the keccak@1.4.0 rebuild script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/brandon/.npm/_logs/2019-11-14T20_26_34_257Z-debug.log
+Keccak bindings compilation fail. Pure JS implementation will be used.
+
+> keccak@1.4.0 install /home/brandon/debarter/node_modules/eth-json-rpc-middleware/node_modules/keccak
+> npm run rebuild || echo "Keccak bindings compilation fail. Pure JS implementation will be used."
+
+
+> keccak@1.4.0 rebuild /home/brandon/debarter/node_modules/eth-json-rpc-middleware/node_modules/keccak
+> node-gyp rebuild
+
+make: Entering directory '/home/brandon/debarter/node_modules/eth-json-rpc-middleware/node_modules/keccak/build'
+  CXX(target) Release/obj.target/keccak/src/addon.o
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Initialize(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:37:47: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned int rate = info[0]->IntegerValue();
+                                               ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc:38:51: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned int capacity = info[1]->IntegerValue();
+                                                   ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::AbsorbLastFewBits(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:56:48: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned char bits = info[0]->IntegerValue();
+                                                ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Squeeze(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:64:43: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     size_t length = info[0]->IntegerValue();
+                                           ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Copy(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:75:82: error: no matching function for call to ‘v8::Value::ToObject()’
+     KeccakWrapper* to = Nan::ObjectWrap::Unwrap<KeccakWrapper>(info[0]->ToObject());
+                                                                                  ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2631:44: note: candidate: v8::MaybeLocal<v8::Object> v8::Value::ToObject(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT MaybeLocal<Object> ToObject(
+                                            ^~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2631:44: note:   candidate expects 1 argument, 0 provided
+keccak.target.mk:127: recipe for target 'Release/obj.target/keccak/src/addon.o' failed
+make: *** [Release/obj.target/keccak/src/addon.o] Error 1
+make: Leaving directory '/home/brandon/debarter/node_modules/eth-json-rpc-middleware/node_modules/keccak/build'
+gyp ERR! build error 
+gyp ERR! stack Error: `make` failed with exit code: 2
+gyp ERR! stack     at ChildProcess.onExit (/usr/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:194:23)
+gyp ERR! stack     at ChildProcess.emit (events.js:210:5)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:272:12)
+gyp ERR! System Linux 5.0.0-32-generic
+gyp ERR! command "/usr/bin/node" "/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /home/brandon/debarter/node_modules/eth-json-rpc-middleware/node_modules/keccak
+gyp ERR! node -v v13.1.0
+gyp ERR! node-gyp -v v5.0.5
+gyp ERR! not ok 
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! keccak@1.4.0 rebuild: `node-gyp rebuild`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the keccak@1.4.0 rebuild script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/brandon/.npm/_logs/2019-11-14T20_26_36_178Z-debug.log
+Keccak bindings compilation fail. Pure JS implementation will be used.
+
+> keccak@1.4.0 install /home/brandon/debarter/node_modules/eth-sig-util/node_modules/keccak
+> npm run rebuild || echo "Keccak bindings compilation fail. Pure JS implementation will be used."
+
+
+> keccak@1.4.0 rebuild /home/brandon/debarter/node_modules/eth-sig-util/node_modules/keccak
+> node-gyp rebuild
+
+make: Entering directory '/home/brandon/debarter/node_modules/eth-sig-util/node_modules/keccak/build'
+  CXX(target) Release/obj.target/keccak/src/addon.o
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Initialize(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:37:47: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned int rate = info[0]->IntegerValue();
+                                               ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc:38:51: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned int capacity = info[1]->IntegerValue();
+                                                   ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::AbsorbLastFewBits(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:56:48: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned char bits = info[0]->IntegerValue();
+                                                ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Squeeze(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:64:43: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     size_t length = info[0]->IntegerValue();
+                                           ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Copy(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:75:82: error: no matching function for call to ‘v8::Value::ToObject()’
+     KeccakWrapper* to = Nan::ObjectWrap::Unwrap<KeccakWrapper>(info[0]->ToObject());
+                                                                                  ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2631:44: note: candidate: v8::MaybeLocal<v8::Object> v8::Value::ToObject(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT MaybeLocal<Object> ToObject(
+                                            ^~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2631:44: note:   candidate expects 1 argument, 0 provided
+keccak.target.mk:127: recipe for target 'Release/obj.target/keccak/src/addon.o' failed
+make: *** [Release/obj.target/keccak/src/addon.o] Error 1
+make: Leaving directory '/home/brandon/debarter/node_modules/eth-sig-util/node_modules/keccak/build'
+gyp ERR! build error 
+gyp ERR! stack Error: `make` failed with exit code: 2
+gyp ERR! stack     at ChildProcess.onExit (/usr/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:194:23)
+gyp ERR! stack     at ChildProcess.emit (events.js:210:5)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:272:12)
+gyp ERR! System Linux 5.0.0-32-generic
+gyp ERR! command "/usr/bin/node" "/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /home/brandon/debarter/node_modules/eth-sig-util/node_modules/keccak
+gyp ERR! node -v v13.1.0
+gyp ERR! node-gyp -v v5.0.5
+gyp ERR! not ok 
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! keccak@1.4.0 rebuild: `node-gyp rebuild`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the keccak@1.4.0 rebuild script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/brandon/.npm/_logs/2019-11-14T20_26_37_386Z-debug.log
+Keccak bindings compilation fail. Pure JS implementation will be used.
+
+> keccak@1.4.0 install /home/brandon/debarter/node_modules/eth-tx-summary/node_modules/keccak
+> npm run rebuild || echo "Keccak bindings compilation fail. Pure JS implementation will be used."
+
+
+> keccak@1.4.0 rebuild /home/brandon/debarter/node_modules/eth-tx-summary/node_modules/keccak
+> node-gyp rebuild
+
+make: Entering directory '/home/brandon/debarter/node_modules/eth-tx-summary/node_modules/keccak/build'
+  CXX(target) Release/obj.target/keccak/src/addon.o
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Initialize(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:37:47: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned int rate = info[0]->IntegerValue();
+                                               ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc:38:51: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned int capacity = info[1]->IntegerValue();
+                                                   ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::AbsorbLastFewBits(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:56:48: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned char bits = info[0]->IntegerValue();
+                                                ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Squeeze(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:64:43: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     size_t length = info[0]->IntegerValue();
+                                           ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Copy(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:75:82: error: no matching function for call to ‘v8::Value::ToObject()’
+     KeccakWrapper* to = Nan::ObjectWrap::Unwrap<KeccakWrapper>(info[0]->ToObject());
+                                                                                  ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2631:44: note: candidate: v8::MaybeLocal<v8::Object> v8::Value::ToObject(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT MaybeLocal<Object> ToObject(
+                                            ^~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2631:44: note:   candidate expects 1 argument, 0 provided
+keccak.target.mk:127: recipe for target 'Release/obj.target/keccak/src/addon.o' failed
+make: *** [Release/obj.target/keccak/src/addon.o] Error 1
+make: Leaving directory '/home/brandon/debarter/node_modules/eth-tx-summary/node_modules/keccak/build'
+gyp ERR! build error 
+gyp ERR! stack Error: `make` failed with exit code: 2
+gyp ERR! stack     at ChildProcess.onExit (/usr/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:194:23)
+gyp ERR! stack     at ChildProcess.emit (events.js:210:5)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:272:12)
+gyp ERR! System Linux 5.0.0-32-generic
+gyp ERR! command "/usr/bin/node" "/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /home/brandon/debarter/node_modules/eth-tx-summary/node_modules/keccak
+gyp ERR! node -v v13.1.0
+gyp ERR! node-gyp -v v5.0.5
+gyp ERR! not ok 
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! keccak@1.4.0 rebuild: `node-gyp rebuild`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the keccak@1.4.0 rebuild script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/brandon/.npm/_logs/2019-11-14T20_26_38_545Z-debug.log
+Keccak bindings compilation fail. Pure JS implementation will be used.
+
+> keccak@1.4.0 install /home/brandon/debarter/node_modules/ethereumjs-account/node_modules/keccak
+> npm run rebuild || echo "Keccak bindings compilation fail. Pure JS implementation will be used."
+
+
+> keccak@1.4.0 rebuild /home/brandon/debarter/node_modules/ethereumjs-account/node_modules/keccak
+> node-gyp rebuild
+
+make: Entering directory '/home/brandon/debarter/node_modules/ethereumjs-account/node_modules/keccak/build'
+  CXX(target) Release/obj.target/keccak/src/addon.o
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Initialize(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:37:47: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned int rate = info[0]->IntegerValue();
+                                               ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc:38:51: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned int capacity = info[1]->IntegerValue();
+                                                   ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::AbsorbLastFewBits(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:56:48: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned char bits = info[0]->IntegerValue();
+                                                ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Squeeze(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:64:43: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     size_t length = info[0]->IntegerValue();
+                                           ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Copy(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:75:82: error: no matching function for call to ‘v8::Value::ToObject()’
+     KeccakWrapper* to = Nan::ObjectWrap::Unwrap<KeccakWrapper>(info[0]->ToObject());
+                                                                                  ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2631:44: note: candidate: v8::MaybeLocal<v8::Object> v8::Value::ToObject(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT MaybeLocal<Object> ToObject(
+                                            ^~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2631:44: note:   candidate expects 1 argument, 0 provided
+keccak.target.mk:127: recipe for target 'Release/obj.target/keccak/src/addon.o' failed
+make: *** [Release/obj.target/keccak/src/addon.o] Error 1
+make: Leaving directory '/home/brandon/debarter/node_modules/ethereumjs-account/node_modules/keccak/build'
+gyp ERR! build error 
+gyp ERR! stack Error: `make` failed with exit code: 2
+gyp ERR! stack     at ChildProcess.onExit (/usr/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:194:23)
+gyp ERR! stack     at ChildProcess.emit (events.js:210:5)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:272:12)
+gyp ERR! System Linux 5.0.0-32-generic
+gyp ERR! command "/usr/bin/node" "/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /home/brandon/debarter/node_modules/ethereumjs-account/node_modules/keccak
+gyp ERR! node -v v13.1.0
+gyp ERR! node-gyp -v v5.0.5
+gyp ERR! not ok 
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! keccak@1.4.0 rebuild: `node-gyp rebuild`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the keccak@1.4.0 rebuild script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/brandon/.npm/_logs/2019-11-14T20_26_39_713Z-debug.log
+Keccak bindings compilation fail. Pure JS implementation will be used.
+
+> keccak@1.4.0 install /home/brandon/debarter/node_modules/ethereumjs-block/node_modules/keccak
+> npm run rebuild || echo "Keccak bindings compilation fail. Pure JS implementation will be used."
+
+
+> keccak@1.4.0 rebuild /home/brandon/debarter/node_modules/ethereumjs-block/node_modules/keccak
+> node-gyp rebuild
+
+make: Entering directory '/home/brandon/debarter/node_modules/ethereumjs-block/node_modules/keccak/build'
+  CXX(target) Release/obj.target/keccak/src/addon.o
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Initialize(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:37:47: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned int rate = info[0]->IntegerValue();
+                                               ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc:38:51: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned int capacity = info[1]->IntegerValue();
+                                                   ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::AbsorbLastFewBits(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:56:48: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned char bits = info[0]->IntegerValue();
+                                                ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Squeeze(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:64:43: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     size_t length = info[0]->IntegerValue();
+                                           ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Copy(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:75:82: error: no matching function for call to ‘v8::Value::ToObject()’
+     KeccakWrapper* to = Nan::ObjectWrap::Unwrap<KeccakWrapper>(info[0]->ToObject());
+                                                                                  ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2631:44: note: candidate: v8::MaybeLocal<v8::Object> v8::Value::ToObject(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT MaybeLocal<Object> ToObject(
+                                            ^~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2631:44: note:   candidate expects 1 argument, 0 provided
+keccak.target.mk:127: recipe for target 'Release/obj.target/keccak/src/addon.o' failed
+make: *** [Release/obj.target/keccak/src/addon.o] Error 1
+make: Leaving directory '/home/brandon/debarter/node_modules/ethereumjs-block/node_modules/keccak/build'
+gyp ERR! build error 
+gyp ERR! stack Error: `make` failed with exit code: 2
+gyp ERR! stack     at ChildProcess.onExit (/usr/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:194:23)
+gyp ERR! stack     at ChildProcess.emit (events.js:210:5)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:272:12)
+gyp ERR! System Linux 5.0.0-32-generic
+gyp ERR! command "/usr/bin/node" "/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /home/brandon/debarter/node_modules/ethereumjs-block/node_modules/keccak
+gyp ERR! node -v v13.1.0
+gyp ERR! node-gyp -v v5.0.5
+gyp ERR! not ok 
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! keccak@1.4.0 rebuild: `node-gyp rebuild`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the keccak@1.4.0 rebuild script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/brandon/.npm/_logs/2019-11-14T20_26_40_884Z-debug.log
+Keccak bindings compilation fail. Pure JS implementation will be used.
+
+> keccak@1.4.0 install /home/brandon/debarter/node_modules/ethereumjs-tx/node_modules/keccak
+> npm run rebuild || echo "Keccak bindings compilation fail. Pure JS implementation will be used."
+
+
+> keccak@1.4.0 rebuild /home/brandon/debarter/node_modules/ethereumjs-tx/node_modules/keccak
+> node-gyp rebuild
+
+make: Entering directory '/home/brandon/debarter/node_modules/ethereumjs-tx/node_modules/keccak/build'
+  CXX(target) Release/obj.target/keccak/src/addon.o
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Initialize(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:37:47: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned int rate = info[0]->IntegerValue();
+                                               ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc:38:51: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned int capacity = info[1]->IntegerValue();
+                                                   ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::AbsorbLastFewBits(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:56:48: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned char bits = info[0]->IntegerValue();
+                                                ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Squeeze(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:64:43: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     size_t length = info[0]->IntegerValue();
+                                           ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Copy(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:75:82: error: no matching function for call to ‘v8::Value::ToObject()’
+     KeccakWrapper* to = Nan::ObjectWrap::Unwrap<KeccakWrapper>(info[0]->ToObject());
+                                                                                  ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2631:44: note: candidate: v8::MaybeLocal<v8::Object> v8::Value::ToObject(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT MaybeLocal<Object> ToObject(
+                                            ^~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2631:44: note:   candidate expects 1 argument, 0 provided
+keccak.target.mk:127: recipe for target 'Release/obj.target/keccak/src/addon.o' failed
+make: *** [Release/obj.target/keccak/src/addon.o] Error 1
+make: Leaving directory '/home/brandon/debarter/node_modules/ethereumjs-tx/node_modules/keccak/build'
+gyp ERR! build error 
+gyp ERR! stack Error: `make` failed with exit code: 2
+gyp ERR! stack     at ChildProcess.onExit (/usr/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:194:23)
+gyp ERR! stack     at ChildProcess.emit (events.js:210:5)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:272:12)
+gyp ERR! System Linux 5.0.0-32-generic
+gyp ERR! command "/usr/bin/node" "/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /home/brandon/debarter/node_modules/ethereumjs-tx/node_modules/keccak
+gyp ERR! node -v v13.1.0
+gyp ERR! node-gyp -v v5.0.5
+gyp ERR! not ok 
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! keccak@1.4.0 rebuild: `node-gyp rebuild`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the keccak@1.4.0 rebuild script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/brandon/.npm/_logs/2019-11-14T20_26_42_055Z-debug.log
+Keccak bindings compilation fail. Pure JS implementation will be used.
+
+> keccak@1.4.0 install /home/brandon/debarter/node_modules/ethereumjs-vm/node_modules/keccak
+> npm run rebuild || echo "Keccak bindings compilation fail. Pure JS implementation will be used."
+
+
+> keccak@1.4.0 rebuild /home/brandon/debarter/node_modules/ethereumjs-vm/node_modules/keccak
+> node-gyp rebuild
+
+make: Entering directory '/home/brandon/debarter/node_modules/ethereumjs-vm/node_modules/keccak/build'
+  CXX(target) Release/obj.target/keccak/src/addon.o
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Initialize(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:37:47: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned int rate = info[0]->IntegerValue();
+                                               ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc:38:51: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned int capacity = info[1]->IntegerValue();
+                                                   ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::AbsorbLastFewBits(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:56:48: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned char bits = info[0]->IntegerValue();
+                                                ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Squeeze(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:64:43: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     size_t length = info[0]->IntegerValue();
+                                           ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Copy(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:75:82: error: no matching function for call to ‘v8::Value::ToObject()’
+     KeccakWrapper* to = Nan::ObjectWrap::Unwrap<KeccakWrapper>(info[0]->ToObject());
+                                                                                  ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2631:44: note: candidate: v8::MaybeLocal<v8::Object> v8::Value::ToObject(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT MaybeLocal<Object> ToObject(
+                                            ^~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2631:44: note:   candidate expects 1 argument, 0 provided
+keccak.target.mk:127: recipe for target 'Release/obj.target/keccak/src/addon.o' failed
+make: *** [Release/obj.target/keccak/src/addon.o] Error 1
+make: Leaving directory '/home/brandon/debarter/node_modules/ethereumjs-vm/node_modules/keccak/build'
+gyp ERR! build error 
+gyp ERR! stack Error: `make` failed with exit code: 2
+gyp ERR! stack     at ChildProcess.onExit (/usr/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:194:23)
+gyp ERR! stack     at ChildProcess.emit (events.js:210:5)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:272:12)
+gyp ERR! System Linux 5.0.0-32-generic
+gyp ERR! command "/usr/bin/node" "/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /home/brandon/debarter/node_modules/ethereumjs-vm/node_modules/keccak
+gyp ERR! node -v v13.1.0
+gyp ERR! node-gyp -v v5.0.5
+gyp ERR! not ok 
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! keccak@1.4.0 rebuild: `node-gyp rebuild`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the keccak@1.4.0 rebuild script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/brandon/.npm/_logs/2019-11-14T20_26_43_233Z-debug.log
+Keccak bindings compilation fail. Pure JS implementation will be used.
+
+> keccak@2.0.0 install /home/brandon/debarter/node_modules/keccak
+> npm run rebuild || echo "Keccak bindings compilation fail. Pure JS implementation will be used."
+
+
+> keccak@2.0.0 rebuild /home/brandon/debarter/node_modules/keccak
+> node-gyp rebuild
+
+make: Entering directory '/home/brandon/debarter/node_modules/keccak/build'
+  CXX(target) Release/obj.target/keccak/src/addon.o
+  CC(target) Release/obj.target/keccak/src/libkeccak-64/KeccakSpongeWidth1600.o
+  CC(target) Release/obj.target/keccak/src/libkeccak-64/KeccakP-1600-opt64.o
+  SOLINK_MODULE(target) Release/obj.target/keccak.node
+  COPY Release/keccak.node
+make: Leaving directory '/home/brandon/debarter/node_modules/keccak/build'
+
+> keccak@1.4.0 install /home/brandon/debarter/node_modules/merkle-patricia-tree/node_modules/keccak
+> npm run rebuild || echo "Keccak bindings compilation fail. Pure JS implementation will be used."
+
+
+> keccak@1.4.0 rebuild /home/brandon/debarter/node_modules/merkle-patricia-tree/node_modules/keccak
+> node-gyp rebuild
+
+make: Entering directory '/home/brandon/debarter/node_modules/merkle-patricia-tree/node_modules/keccak/build'
+  CXX(target) Release/obj.target/keccak/src/addon.o
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Initialize(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:37:47: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned int rate = info[0]->IntegerValue();
+                                               ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc:38:51: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned int capacity = info[1]->IntegerValue();
+                                                   ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::AbsorbLastFewBits(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:56:48: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     unsigned char bits = info[0]->IntegerValue();
+                                                ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Squeeze(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:64:43: error: no matching function for call to ‘v8::Value::IntegerValue()’
+     size_t length = info[0]->IntegerValue();
+                                           ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/addon.cc: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE KeccakWrapper::Copy(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cc:75:82: error: no matching function for call to ‘v8::Value::ToObject()’
+     KeccakWrapper* to = Nan::ObjectWrap::Unwrap<KeccakWrapper>(info[0]->ToObject());
+                                                                                  ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2631:44: note: candidate: v8::MaybeLocal<v8::Object> v8::Value::ToObject(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT MaybeLocal<Object> ToObject(
+                                            ^~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2631:44: note:   candidate expects 1 argument, 0 provided
+keccak.target.mk:127: recipe for target 'Release/obj.target/keccak/src/addon.o' failed
+make: *** [Release/obj.target/keccak/src/addon.o] Error 1
+make: Leaving directory '/home/brandon/debarter/node_modules/merkle-patricia-tree/node_modules/keccak/build'
+gyp ERR! build error 
+gyp ERR! stack Error: `make` failed with exit code: 2
+gyp ERR! stack     at ChildProcess.onExit (/usr/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:194:23)
+gyp ERR! stack     at ChildProcess.emit (events.js:210:5)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:272:12)
+gyp ERR! System Linux 5.0.0-32-generic
+gyp ERR! command "/usr/bin/node" "/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /home/brandon/debarter/node_modules/merkle-patricia-tree/node_modules/keccak
+gyp ERR! node -v v13.1.0
+gyp ERR! node-gyp -v v5.0.5
+gyp ERR! not ok 
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! keccak@1.4.0 rebuild: `node-gyp rebuild`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the keccak@1.4.0 rebuild script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+npm WARN Local package.json exists, but node_modules missing, did you mean to install?
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/brandon/.npm/_logs/2019-11-14T20_26_49_183Z-debug.log
+Keccak bindings compilation fail. Pure JS implementation will be used.
+
+> scrypt@6.0.3 install /home/brandon/debarter/node_modules/scrypt
+> node-gyp rebuild
+
+make: Entering directory '/home/brandon/debarter/node_modules/scrypt/build'
+  SOLINK_MODULE(target) Release/obj.target/copied_files.node
+  COPY Release/copied_files.node
+  CC(target) Release/obj.target/scrypt_wrapper/src/util/memlimit.o
+  CC(target) Release/obj.target/scrypt_wrapper/src/scryptwrapper/keyderivation.o
+  CC(target) Release/obj.target/scrypt_wrapper/src/scryptwrapper/pickparams.o
+  CC(target) Release/obj.target/scrypt_wrapper/src/scryptwrapper/hash.o
+  AR(target) Release/obj.target/scrypt_wrapper.a
+  COPY Release/scrypt_wrapper.a
+  CC(target) Release/obj.target/scrypt_lib/scrypt/scrypt-1.2.0/lib/crypto/crypto_scrypt.o
+  CC(target) Release/obj.target/scrypt_lib/scrypt/scrypt-1.2.0/lib/crypto/crypto_scrypt_smix.o
+  CC(target) Release/obj.target/scrypt_lib/scrypt/scrypt-1.2.0/libcperciva/util/warnp.o
+  CC(target) Release/obj.target/scrypt_lib/scrypt/scrypt-1.2.0/libcperciva/alg/sha256.o
+  CC(target) Release/obj.target/scrypt_lib/scrypt/scrypt-1.2.0/libcperciva/util/insecure_memzero.o
+  CC(target) Release/obj.target/scrypt_lib/scrypt/scrypt-1.2.0/lib/scryptenc/scryptenc_cpuperf.o
+  AR(target) Release/obj.target/scrypt_lib.a
+  COPY Release/scrypt_lib.a
+  CXX(target) Release/obj.target/scrypt/src/node-boilerplate/scrypt_common.o
+  CXX(target) Release/obj.target/scrypt/src/node-boilerplate/scrypt_params_async.o
+In file included from ../src/node-boilerplate/inc/scrypt_async.h:28:0,
+                 from ../src/node-boilerplate/inc/scrypt_params_async.h:28,
+                 from ../src/node-boilerplate/scrypt_params_async.cc:4:
+../src/node-boilerplate/inc/scrypt_common.h: In constructor ‘NodeScrypt::Params::Params(const v8::Local<v8::Object>&)’:
+../src/node-boilerplate/inc/scrypt_common.h:39:48: error: no matching function for call to ‘v8::Object::Get(v8::Local<v8::String>)’
+       N(obj->Get(Nan::New("N").ToLocalChecked())->Uint32Value()),
+                                                ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../../nan/nan.h:54,
+                 from ../src/node-boilerplate/scrypt_params_async.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3471:43: note: candidate: v8::MaybeLocal<v8::Value> v8::Object::Get(v8::Local<v8::Context>, v8::Local<v8::Value>)
+   V8_WARN_UNUSED_RESULT MaybeLocal<Value> Get(Local<Context> context,
+                                           ^~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3471:43: note:   candidate expects 2 arguments, 1 provided
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3474:43: note: candidate: v8::MaybeLocal<v8::Value> v8::Object::Get(v8::Local<v8::Context>, uint32_t)
+   V8_WARN_UNUSED_RESULT MaybeLocal<Value> Get(Local<Context> context,
+                                           ^~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3474:43: note:   candidate expects 2 arguments, 1 provided
+In file included from ../src/node-boilerplate/inc/scrypt_async.h:28:0,
+                 from ../src/node-boilerplate/inc/scrypt_params_async.h:28,
+                 from ../src/node-boilerplate/scrypt_params_async.cc:4:
+../src/node-boilerplate/inc/scrypt_common.h:40:48: error: no matching function for call to ‘v8::Object::Get(v8::Local<v8::String>)’
+       r(obj->Get(Nan::New("r").ToLocalChecked())->Uint32Value()),
+                                                ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../../nan/nan.h:54,
+                 from ../src/node-boilerplate/scrypt_params_async.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3471:43: note: candidate: v8::MaybeLocal<v8::Value> v8::Object::Get(v8::Local<v8::Context>, v8::Local<v8::Value>)
+   V8_WARN_UNUSED_RESULT MaybeLocal<Value> Get(Local<Context> context,
+                                           ^~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3471:43: note:   candidate expects 2 arguments, 1 provided
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3474:43: note: candidate: v8::MaybeLocal<v8::Value> v8::Object::Get(v8::Local<v8::Context>, uint32_t)
+   V8_WARN_UNUSED_RESULT MaybeLocal<Value> Get(Local<Context> context,
+                                           ^~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3474:43: note:   candidate expects 2 arguments, 1 provided
+In file included from ../src/node-boilerplate/inc/scrypt_async.h:28:0,
+                 from ../src/node-boilerplate/inc/scrypt_params_async.h:28,
+                 from ../src/node-boilerplate/scrypt_params_async.cc:4:
+../src/node-boilerplate/inc/scrypt_common.h:41:48: error: no matching function for call to ‘v8::Object::Get(v8::Local<v8::String>)’
+       p(obj->Get(Nan::New("p").ToLocalChecked())->Uint32Value()) {}
+                                                ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../../nan/nan.h:54,
+                 from ../src/node-boilerplate/scrypt_params_async.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3471:43: note: candidate: v8::MaybeLocal<v8::Value> v8::Object::Get(v8::Local<v8::Context>, v8::Local<v8::Value>)
+   V8_WARN_UNUSED_RESULT MaybeLocal<Value> Get(Local<Context> context,
+                                           ^~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3471:43: note:   candidate expects 2 arguments, 1 provided
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3474:43: note: candidate: v8::MaybeLocal<v8::Value> v8::Object::Get(v8::Local<v8::Context>, uint32_t)
+   V8_WARN_UNUSED_RESULT MaybeLocal<Value> Get(Local<Context> context,
+                                           ^~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3474:43: note:   candidate expects 2 arguments, 1 provided
+In file included from ../src/node-boilerplate/inc/scrypt_params_async.h:28:0,
+                 from ../src/node-boilerplate/scrypt_params_async.cc:4:
+../src/node-boilerplate/inc/scrypt_async.h: In member function ‘virtual void ScryptAsyncWorker::HandleErrorCallback()’:
+../src/node-boilerplate/inc/scrypt_async.h:53:29: warning: ‘v8::Local<v8::Value> Nan::Callback::Call(int, v8::Local<v8::Value>*) const’ is deprecated [-Wdeprecated-declarations]
+       callback->Call(1, argv);
+                             ^
+In file included from ../src/node-boilerplate/scrypt_params_async.cc:1:0:
+../../nan/nan.h:1740:3: note: declared here
+   Call(int argc, v8::Local<v8::Value> argv[]) const {
+   ^~~~
+In file included from ../src/node-boilerplate/scrypt_params_async.cc:4:0:
+../src/node-boilerplate/inc/scrypt_params_async.h: In constructor ‘ScryptParamsAsyncWorker::ScryptParamsAsyncWorker(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/node-boilerplate/inc/scrypt_params_async.h:35:36: error: no matching function for call to ‘v8::Value::NumberValue()’
+       maxtime(info[0]->NumberValue()),
+                                    ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../../nan/nan.h:54,
+                 from ../src/node-boilerplate/scrypt_params_async.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2650:39: note: candidate: v8::Maybe<double> v8::Value::NumberValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<double> NumberValue(Local<Context> context) const;
+                                       ^~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2650:39: note:   candidate expects 1 argument, 0 provided
+In file included from ../src/node-boilerplate/scrypt_params_async.cc:4:0:
+../src/node-boilerplate/inc/scrypt_params_async.h:36:39: error: no matching function for call to ‘v8::Value::NumberValue()’
+       maxmemfrac(info[1]->NumberValue()),
+                                       ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../../nan/nan.h:54,
+                 from ../src/node-boilerplate/scrypt_params_async.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2650:39: note: candidate: v8::Maybe<double> v8::Value::NumberValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<double> NumberValue(Local<Context> context) const;
+                                       ^~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2650:39: note:   candidate expects 1 argument, 0 provided
+In file included from ../src/node-boilerplate/scrypt_params_async.cc:4:0:
+../src/node-boilerplate/inc/scrypt_params_async.h:37:36: error: no matching function for call to ‘v8::Value::IntegerValue()’
+       maxmem(info[2]->IntegerValue()),
+                                    ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../../nan/nan.h:54,
+                 from ../src/node-boilerplate/scrypt_params_async.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+In file included from ../src/node-boilerplate/scrypt_params_async.cc:4:0:
+../src/node-boilerplate/inc/scrypt_params_async.h:38:39: error: no matching function for call to ‘v8::Value::IntegerValue()’
+       osfreemem(info[3]->IntegerValue())
+                                       ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../../nan/nan.h:54,
+                 from ../src/node-boilerplate/scrypt_params_async.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note: candidate: v8::Maybe<long int> v8::Value::IntegerValue(v8::Local<v8::Context>) const
+   V8_WARN_UNUSED_RESULT Maybe<int64_t> IntegerValue(
+                                        ^~~~~~~~~~~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:2651:40: note:   candidate expects 1 argument, 0 provided
+../src/node-boilerplate/scrypt_params_async.cc: In member function ‘virtual void ScryptParamsAsyncWorker::HandleOKCallback()’:
+../src/node-boilerplate/scrypt_params_async.cc:23:67: error: no matching function for call to ‘v8::Object::Set(v8::Local<v8::String>, Nan::imp::IntegerFactory<v8::Integer>::return_t)’
+   obj->Set(Nan::New("N").ToLocalChecked(), Nan::New<Integer>(logN));
+                                                                   ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../../nan/nan.h:54,
+                 from ../src/node-boilerplate/scrypt_params_async.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3424:37: note: candidate: v8::Maybe<bool> v8::Object::Set(v8::Local<v8::Context>, v8::Local<v8::Value>, v8::Local<v8::Value>)
+   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context,
+                                     ^~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3424:37: note:   candidate expects 3 arguments, 2 provided
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3427:37: note: candidate: v8::Maybe<bool> v8::Object::Set(v8::Local<v8::Context>, uint32_t, v8::Local<v8::Value>)
+   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context, uint32_t index,
+                                     ^~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3427:37: note:   candidate expects 3 arguments, 2 provided
+../src/node-boilerplate/scrypt_params_async.cc:24:64: error: no matching function for call to ‘v8::Object::Set(v8::Local<v8::String>, Nan::imp::IntegerFactory<v8::Integer>::return_t)’
+   obj->Set(Nan::New("r").ToLocalChecked(), Nan::New<Integer>(r));
+                                                                ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../../nan/nan.h:54,
+                 from ../src/node-boilerplate/scrypt_params_async.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3424:37: note: candidate: v8::Maybe<bool> v8::Object::Set(v8::Local<v8::Context>, v8::Local<v8::Value>, v8::Local<v8::Value>)
+   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context,
+                                     ^~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3424:37: note:   candidate expects 3 arguments, 2 provided
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3427:37: note: candidate: v8::Maybe<bool> v8::Object::Set(v8::Local<v8::Context>, uint32_t, v8::Local<v8::Value>)
+   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context, uint32_t index,
+                                     ^~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3427:37: note:   candidate expects 3 arguments, 2 provided
+../src/node-boilerplate/scrypt_params_async.cc:25:64: error: no matching function for call to ‘v8::Object::Set(v8::Local<v8::String>, Nan::imp::IntegerFactory<v8::Integer>::return_t)’
+   obj->Set(Nan::New("p").ToLocalChecked(), Nan::New<Integer>(p));
+                                                                ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../../nan/nan.h:54,
+                 from ../src/node-boilerplate/scrypt_params_async.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3424:37: note: candidate: v8::Maybe<bool> v8::Object::Set(v8::Local<v8::Context>, v8::Local<v8::Value>, v8::Local<v8::Value>)
+   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context,
+                                     ^~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3424:37: note:   candidate expects 3 arguments, 2 provided
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3427:37: note: candidate: v8::Maybe<bool> v8::Object::Set(v8::Local<v8::Context>, uint32_t, v8::Local<v8::Value>)
+   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context, uint32_t index,
+                                     ^~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3427:37: note:   candidate expects 3 arguments, 2 provided
+../src/node-boilerplate/scrypt_params_async.cc:32:25: warning: ‘v8::Local<v8::Value> Nan::Callback::Call(int, v8::Local<v8::Value>*) const’ is deprecated [-Wdeprecated-declarations]
+   callback->Call(2, argv);
+                         ^
+In file included from ../src/node-boilerplate/scrypt_params_async.cc:1:0:
+../../nan/nan.h:1740:3: note: declared here
+   Call(int argc, v8::Local<v8::Value> argv[]) const {
+   ^~~~
+scrypt.target.mk:129: recipe for target 'Release/obj.target/scrypt/src/node-boilerplate/scrypt_params_async.o' failed
+make: *** [Release/obj.target/scrypt/src/node-boilerplate/scrypt_params_async.o] Error 1
+make: Leaving directory '/home/brandon/debarter/node_modules/scrypt/build'
+gyp ERR! build error 
+gyp ERR! stack Error: `make` failed with exit code: 2
+gyp ERR! stack     at ChildProcess.onExit (/usr/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:194:23)
+gyp ERR! stack     at ChildProcess.emit (events.js:210:5)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:272:12)
+gyp ERR! System Linux 5.0.0-32-generic
+gyp ERR! command "/usr/bin/node" "/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /home/brandon/debarter/node_modules/scrypt
+gyp ERR! node -v v13.1.0
+gyp ERR! node-gyp -v v5.0.5
+gyp ERR! not ok 
+
+> secp256k1@3.7.1 install /home/brandon/debarter/node_modules/secp256k1
+> npm run rebuild || echo "Secp256k1 bindings compilation fail. Pure JS implementation will be used."
+
+
+> secp256k1@3.7.1 rebuild /home/brandon/debarter/node_modules/secp256k1
+> node-gyp rebuild
+
+make: Entering directory '/home/brandon/debarter/node_modules/secp256k1/build'
+  CXX(target) Release/obj.target/secp256k1/src/addon.o
+  CXX(target) Release/obj.target/secp256k1/src/privatekey.o
+../src/privatekey.cc: In function ‘Nan::NAN_METHOD_RETURN_TYPE privateKeyNegate(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/privatekey.cc:73:30: warning: ignoring return value of ‘int secp256k1_ec_privkey_negate(const secp256k1_context*, unsigned char*)’, declared with attribute warn_unused_result [-Wunused-result]
+   secp256k1_ec_privkey_negate(secp256k1ctx, &private_key[0]);
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CXX(target) Release/obj.target/secp256k1/src/publickey.o
+  CXX(target) Release/obj.target/secp256k1/src/signature.o
+  CXX(target) Release/obj.target/secp256k1/src/ecdsa.o
+../src/ecdsa.cc: In function ‘Nan::NAN_METHOD_RETURN_TYPE sign(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/ecdsa.cc:88:131: warning: ignoring return value of ‘v8::Maybe<bool> v8::Object::Set(v8::Local<v8::Context>, v8::Local<v8::Value>, v8::Local<v8::Value>)’, declared with attribute warn_unused_result [-Wunused-result]
+ GetCurrentContext(), Nan::New<v8::String>("signature").ToLocalChecked(), COPY_BUFFER(&output[0], 64));
+                                                                                                     ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/ecdsa.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3424:37: note: declared here
+   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context,
+                                     ^~~
+../src/ecdsa.cc:89:130: warning: ignoring return value of ‘v8::Maybe<bool> v8::Object::Set(v8::Local<v8::Context>, v8::Local<v8::Value>, v8::Local<v8::Value>)’, declared with attribute warn_unused_result [-Wunused-result]
+ >GetCurrentContext(), Nan::New<v8::String>("recovery").ToLocalChecked(), Nan::New<v8::Number>(recid));
+                                                                                                     ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/ecdsa.cc:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3424:37: note: declared here
+   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context,
+                                     ^~~
+  CXX(target) Release/obj.target/secp256k1/src/ecdh.o
+  CC(target) Release/obj.target/secp256k1/src/secp256k1-src/src/secp256k1.o
+  CC(target) Release/obj.target/secp256k1/src/secp256k1-src/contrib/lax_der_parsing.o
+  CC(target) Release/obj.target/secp256k1/src/secp256k1-src/contrib/lax_der_privatekey_parsing.o
+  SOLINK_MODULE(target) Release/obj.target/secp256k1.node
+  COPY Release/secp256k1.node
+make: Leaving directory '/home/brandon/debarter/node_modules/secp256k1/build'
+
+> sha3@1.2.3 install /home/brandon/debarter/node_modules/sha3
+> node-gyp rebuild
+
+make: Entering directory '/home/brandon/debarter/node_modules/sha3/build'
+  CXX(target) Release/obj.target/sha3/src/addon.o
+../src/addon.cpp: In static member function ‘static Nan::NAN_METHOD_RETURN_TYPE SHA3Hash::New(Nan::NAN_METHOD_ARGS_TYPE)’:
+../src/addon.cpp:49:23: warning: ‘new’ of type ‘SHA3Hash’ with extended alignment 32 [-Waligned-new=]
+    obj = new SHA3Hash();
+                       ^
+../src/addon.cpp:49:23: note: uses ‘void* operator new(std::size_t)’, which does not have an alignment parameter
+../src/addon.cpp:49:23: note: use ‘-faligned-new’ to enable C++17 over-aligned new support
+../src/addon.cpp: In static member function ‘static void SHA3Hash::Init(Nan::ADDON_REGISTER_FUNCTION_ARGS_TYPE)’:
+../src/addon.cpp:83:27: error: no matching function for call to ‘v8::Object::Set(v8::Local<v8::String>&, v8::Local<v8::Function>&)’
+   target->Set(className, f);
+                           ^
+In file included from /home/brandon/.cache/node-gyp/13.1.0/include/node/node.h:63:0,
+                 from ../src/addon.cpp:1:
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3424:37: note: candidate: v8::Maybe<bool> v8::Object::Set(v8::Local<v8::Context>, v8::Local<v8::Value>, v8::Local<v8::Value>)
+   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context,
+                                     ^~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3424:37: note:   candidate expects 3 arguments, 2 provided
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3427:37: note: candidate: v8::Maybe<bool> v8::Object::Set(v8::Local<v8::Context>, uint32_t, v8::Local<v8::Value>)
+   V8_WARN_UNUSED_RESULT Maybe<bool> Set(Local<Context> context, uint32_t index,
+                                     ^~~
+/home/brandon/.cache/node-gyp/13.1.0/include/node/v8.h:3427:37: note:   candidate expects 3 arguments, 2 provided
+sha3.target.mk:113: recipe for target 'Release/obj.target/sha3/src/addon.o' failed
+make: *** [Release/obj.target/sha3/src/addon.o] Error 1
+make: Leaving directory '/home/brandon/debarter/node_modules/sha3/build'
+gyp ERR! build error 
+gyp ERR! stack Error: `make` failed with exit code: 2
+gyp ERR! stack     at ChildProcess.onExit (/usr/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:194:23)
+gyp ERR! stack     at ChildProcess.emit (events.js:210:5)
+gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:272:12)
+gyp ERR! System Linux 5.0.0-32-generic
+gyp ERR! command "/usr/bin/node" "/usr/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js" "rebuild"
+gyp ERR! cwd /home/brandon/debarter/node_modules/sha3
+gyp ERR! node -v v13.1.0
+gyp ERR! node-gyp -v v5.0.5
+gyp ERR! not ok 
+npm WARN react-native-card-stack-swiper@1.1.0 requires a peer of react-native@^0.49.1 but none is installed. You must install peer dependencies yourself.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.9 (node_modules/fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.9: wanted {"os":"darwin","arch":"any"} (current: {"os":"linux","arch":"x64"})
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: scrypt@6.0.3 (node_modules/scrypt):
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: scrypt@6.0.3 install: `node-gyp rebuild`
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: Exit status 1
+
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! sha3@1.2.3 install: `node-gyp rebuild`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the sha3@1.2.3 install script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/brandon/.npm/_logs/2019-11-14T20_27_00_943Z-debug.log
+
